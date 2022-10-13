@@ -1,0 +1,94 @@
+\begin{definition}
+Sei $\mathbb{K}$ ein Körper und $V$ ein Vektorraum über $\mathbb{K}$. Sei $M \subset V$.
+\begin{itemize}
+    \item $M$ heißt \textcolor{orange}{minimales Erzeugendensystem} von $V$ falls für alle\\
+    \textcolor{red}{$M' \subset M$} $\subset V$ gilt
+    \begin{center}
+        lin $M'$ = $V \Leftrightarrow M' = M$
+    \end{center}
+    \item Ist $M \subset S \subset V$, so heißt $M$ eine \textcolor{orange}{maximale l.u. Teilmenge von S}, falls für alle $M \subset M' \subset S$ gilt
+    \begin{center}
+        $M'$ l.u. $\Leftrightarrow M' = M$
+    \end{center}
+\end{itemize}
+\end{definition}
+\begin{theorem}
+Sei $V$ ein $\mathbb{K}$ Vektorraum und sei $B \subset V$. TFAE:
+\begin{enumerate}
+    \item $B$ ist eine Basis von $V$
+    \item $B$ ist ein minimales Erzeugendensystem von $V$
+    \item Jedes $v \in V$ lässt sich in eindeutiger Weise als Linearkombination von paarweise verschiedenen Elementen aus $B$ schreiben
+    \item $B$ ist eine maximal l.u. Teilmenge von $V$
+    \item Für jedes Erzeugendensystem $E \subset V$ mit $B \subset E$ ist $B$ eine maximal l.u. Teilmenge von $E$
+    \item Es existiert ein Erzeugendensystem $E$ von $V$, welches $B$ als maximal linear unabhängige Teilmenge enthält
+\end{enumerate}
+\end{theorem}
+\begin{theorem}
+Jeder Vektorraum hat eine Basis und jeder endlich erzeugte Vektorraum hat eine endliche Basis
+\end{theorem}
+\begin{theorem}
+Alle Basen eines endlich erzeugten Vektorraum bestehen aus gleich vielen Vektoren, und diese Anzahl von Vektoren ist endlich.
+\end{theorem}
+\begin{definition}
+Ist $V$ ein $\mathbb{K}$ Vektorraum und ist $\{v_1, \dots, v_n\}$ eine Basis von $V$, mit paarweise verschiedenen Elementen, so nennen wir $(v_1, \dots, v_n)$ eine \textcolor{blue}{geordnete Basis} von $V$.
+\end{definition}
+\begin{theorem}
+Sei $E$ ein Erzeugendensystem von $V$ und $M \subset E$ linear unabhängig. Es existiert eine Basis $B$ von $V$ mit 
+\begin{center}
+    $M \subset B \subset E$
+\end{center}
+\end{theorem}
+\begin{theorem}
+Jeder Vektorraum hat eine Basis, und jeder endlich erzeugte Vektorraum hat eine endliche Basis.
+\end{theorem}
+\begin{theorem}
+Sei $E$ ein Erzeugendensystem von $V$ und $M \subset E$ linear unabhängig. Es existiert eine Basis $B$ von $V$ mit 
+\begin{center}
+    $M \subset B \subset E$.
+\end{center}
+\end{theorem}
+\begin{theorem}
+1. Jeder Vektorraum hat eine Basis.\\
+2. Jede l.u. Teilmenge eines Vektorraums kann zu einer Basis ergänzt werden\\
+3. Jedes Erzeugendensystem hat eine Teilmenge die eine Basis ist
+\end{theorem}
+\begin{theorem}
+Sei $V$ ein $\mathbb{K}$ Vektorraum und $B$ eine Basis von V. Weiterhin sei $N \subset V$ eine l.u. Teilmenge von $V$. Dann existiert $B' \subset B$ so, dass $N \subset B'$ eine Basis von $V$ ist.
+\end{theorem}
+\begin{theorem}
+Sei $m \in \mathbb{N}$ und seien $v_1, \dots, v_m \in V$ Vektoren aus $V$. Dann ist der \textcolor{green}{Rang} des Vektorensystems $(v_1, \dots, v_m)$ die \textcolor{green}{Zahl $r \in \mathbb{N}_0$}, die die folgenden 2 Eigenschaften erfüllt:
+\begin{enumerate}
+    \item Es gibt eine \textcolor{red}{$r$}-elementige Teilmenge \textcolor{red}{$R \subset \{v_1, \dots, v_m\}$} welche \textcolor{red}{l.u.} ist.
+    \item Jede \textcolor{blue}{$r+1$}-elementige Teilmenge \textcolor{blue}{$S \subset \{v_1, \dots, v_m\}$} ist \textcolor{blue}{l.a.}
+\end{enumerate}
+Wir schreiben Rang$(v_1,\dots,v_m) = r$.
+\end{theorem}
+\begin{theorem}
+Sei $V$ ein $\mathbb{K}$ Vektorraum und $(v_1,\dots,v_m)$ ein Vektorsyste, aus $V$ (d.h. $v_1,\dots,v_m \in V$). dann gilt
+\begin{enumerate}
+    \item $0 \leq$ Rang$(v_1,\dots,v_m) \leq m$
+    \item Rang$(v_1,\dots,v_m) = 0 \Leftrightarrow v_i = 0, i = 1,2,\dots, m.$
+\end{enumerate}
+\end{theorem}
+\begin{theorem}
+Sei $V$ ein $\mathbb{K}$ und $v_1,\dots,v_m \in V$. TFAE:
+\begin{enumerate}
+    \item Rang$(v_1,\dots,v_m) = m$
+    \item $\lambda_1v_1+\dots+\lambda_{m}v_m = 0$ mit $\lambda_i \in\mathbb{K}, 1 \leq i \leq m$, so ist $\lambda_i = 0$ für alle $1 \leq i \leq m$.
+    \item $\{v_1,\dots,v_m\}$ besteht aus $m$ paarweise verschiedenen Vektoren und ist l.u.
+\end{enumerate}
+\end{theorem}
+\begin{theorem}
+Sei $V$ ein $\K$ Vektorraum und $v_1,\dots,v_m \in V$. Das \textcolor{blue}{Vektorsystem $(v_1,\dots,v_m)$} heißt \textcolor{blue}{l.u.} wenn \textcolor{blue}{Rang$(v_1,\dots,v_m) = m$}.
+\end{theorem}
+\begin{definition}(Elementare Umformungen eines Vektorsystems)\\
+Eine elementare Umformung eines Vektorsystems ist einer der folgenden Operationen, welche das Vektorsystem $(v_1,\dots,v_m)$ in ein System $(v'_1,\dots,v'_m)$ überführt:
+\begin{itemize}
+\item \textcolor{red}{(EU1)}   Ersetze ein $v_i$ in $(v_1,\dots,v_m)$ durch $v_i + \lambda v_j$, wobei $\lambda \in \mathbb{K}$ und $j \neq i$, mit $1 \leq i, j \leq m$.
+\item \textcolor{red}{(EU2)}  Platzvertauschung von $v_i$ und $v_j$ in $(v_1,\dots,v_m)$, $1 \leq i, j \leq m$.
+\item \textcolor{red}{(EU3)}  Ersetze ein $v_i$ in $(v_1,\dots,v_m)$ durch $\lambda v_i$ wobei $\lambda \in \mathbb{K}\ \{0\}$ und $1 \leq i \leq m$.
+\end{itemize}
+\end{definition}
+\begin{theorem}
+Theorem 7.1.8
+\end{theorem}

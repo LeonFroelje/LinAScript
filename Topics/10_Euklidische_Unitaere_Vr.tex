@@ -1,0 +1,180 @@
+\newcommand{\stdscp}{\ensuremath{\scp{\cdot,\cdot}}}
+\newcommand{\fuer}{\ensuremath{\text{ für }}}
+\newcommand{\KeRoC}{(\K = \R \smallspace \lor \smallspace\K = \C)}
+\begin{definition}
+    Sei $V$ ein $\R$ Vektorraum. Eine positiv definite symmetrische Bilinearform
+    auf $V$ heißt (euklidisches) Skalarprodukt. Ist $\stdscp$ ein 
+    (euklidisches) Skalarprodukt auf den reellen Vektorraum $V$, so heißt $(V, 
+    \stdscp)$ ein Euklidischer Vektorraum.
+\end{definition}
+\begin{example}
+    Auf $\R^n$ ist $\scp{x,y} = x^T y$ ein euklidisches Skalarprodukt. Wir 
+    nennen es Standard Skalarprodukt und es ist das Standardbeispiel eines 
+    euklidischen (endlich-dimensionalen) Vektorraum.
+\end{example}
+\begin{definition}
+    Sei $V$ ein komplexer Vektorraum und sei $\stdscp: V\times V\to
+    \C$ eine Abbildung mit den folgenden Eigenschaften:\begin{enumerate}
+        \item $\stdscp$ ist linear in der ersten Variable, d.h. \[
+            \forall v_1, v_1', v_2 \in V \smallspace\forall \lambda \in \C: 
+            \scp{\lambda v_1 + v_1', v_2} = \lambda\scp{v_1, v_2} + \scp{v_1',
+             v_2}\]
+        \item $\stdscp$ ist sesquilinear in der zweiten Variable, d.h
+            \[
+                \forall v_1, v_2, v_2' \in V \smallspace \forall \lambda \in \C
+                : \smallspace \scp{v_1, \lambda v_2 + v_2'} = \compconj{\lambda}
+                \scp{v_1, v_2} + \scp{v_1, v_2'}\]
+    \end{enumerate}
+    Dann heißt $\stdscp$ eine Sesquilinearform.
+\end{definition}
+\begin{definition}
+    Eine Sesquilinearform auf den komplexen Vektorraum $V$ heißt\begin{itemize}
+        \item hermitesch wenn zusätzlich gilt\[
+            \scp{v_1, v_2} = \compconj{\scp{v_1,v_2}}\]
+        \item positiv definit wenn \[
+            \forall 0 \neq v \in V: \smallspace \scp{v,v} > 0\]
+    \end{itemize}
+\end{definition}
+\begin{definition}
+    Sei $V$ ein $\C$-Vektorraum. Eine positiv definite hermitesche 
+    Sesquilinearform $\stdscp:V\times V\to \C$ auf $V$ heißt unitäres
+    Skalarprodukt oder inneres Produkt. Ist $\stdscp$ ein inneres Produkt auf 
+    den komplexen Vektorraum $V$, so heißt $(V, \stdscp)$ ein unitärer 
+    Vektorraum.
+\end{definition}
+\begin{definition}
+    Sei $(a_{ij}) = A\in \calM_{n\times m}(\C)$. Dann ist $A^H = (\compconj{
+        a_{ij}})^T$ die hermitesch Transponierte von $A$. Sind alle Einträge von
+        $A \in \calM_{n\times m}(\C)$ reell, so ist $A^H = A^T$.
+\end{definition}
+\begin{example}
+    Auf $\C^n$ ist $\scp{x,y}= y^H x= \dsum_{i=1}^n \compconj{y_i}x_i$ ein 
+    inneres Produkt. Wir nennen es Standard inneres Produkt und es ist das 
+    Standardbeispiel eines unitären (endlich-dimensionalen) Vektorraums.
+\end{example}
+\begin{remark}
+    \hfill
+    \begin{enumerate}
+        \item Ist $\stdscp$ ein inneres Produkt ($\K = \C$) oder ein 
+        Skalarprodukt ($\K = \R$), so ist $\forall v \in V: \scp{v,v} \geq 0$ 
+        \item Ein Unterraum eines euklidischen oder unitären Vektorraums ist 
+        wieder ein euklidischer bzw. unitärer Vektorraum.
+        \item In der zweiten Variable ist ein Skalarprodukt linear. In der 
+        zweiten Variable ist ein inneres Produkt sesquilinear. In beiden Fällen
+        gilt\[
+            \scp{u, \alpha v + \beta w} = \compconj{\alpha}\scp{u,v} + 
+            \compconj{\beta}\scp{u,w}\]
+        \item $\scp{v,0}= 0 = \scp{0,v}$
+    \end{enumerate}
+\end{remark}
+\begin{theorem}
+    Sei $V$ ein euklidischer oder ein unitärer Vektorraum. Dann gilt\[
+        \forall x,y \in V: \smallspace \scp{x,y}\compconj{\scp{x,y}} \leq
+        \scp{x,x}\scp{y,y}\]
+        Die Gleichheit gilt genau dann wenn $x,y$ linear abhängig sind.
+\end{theorem}
+\begin{proof}
+    Später
+\end{proof}
+\begin{theorem}
+    Sei $V$ ein euklidischer ($\K = \R$) oder ein unitärer ($\K = \C$) Vektorraum
+    Dann gilt \begin{enumerate}
+        \item $\forall x,y \in V: \scp{\lambda x, \lambda x} = \lambda \compconj
+        {\lambda}\scp{x,x}$
+        \item $\scp{x+y, x+y} \leq \left(\scp{x,x}^\frac{1}{2} + \scp{y,y}^\frac
+        {1}{2}\right)^2$, mit Gleichheit gdw. $x = \alpha y \lor y = \alpha x,
+        \smallspace \alpha \geq 0, \alpha \in \R$
+    \end{enumerate}
+\end{theorem}
+
+\begin{definition}
+    Sei $V$ ein euklidischer oder unitärer Vektorraum. Für $v\in V$ heißt \[
+        \dabs{v} = \left(\scp{v,v}\right)^\frac{1}{2}\]
+    die Länge des Vektors $v$.
+\end{definition}
+
+\begin{remark}
+    Sei $V$ ein euklidischer oder unitärer Vektorraum. Dann ist \[
+        \scp{v,v}\geq 0 \smallspace \scp{v,v} > 0, \midspace v\neq 0\]
+    Somit ist $\scp{v,v} = 0 \iff v = 0$ 
+\end{remark}
+
+\begin{definition}
+    Sei $V$ ein $\K$ Vektorraum mit $\K = R \lor \K = \C$. Eine Abbildung\[
+        \dabs{\cdot}: V\to \R, \midspace v\mapsto \dabs{v}\]
+    heißt Norm auf $V$ wenn für alle $v,w \in V, \smallspace \lambda \in \K$ 
+    gilt:\begin{enumerate}[(a)]
+        \item $\forall v \in V \dabs{v} \geq 0 \smallspace \land\smallspace 
+        \dabs{v} = 0 \iff v=0$
+        \item $\forall \lambda in \K \smallspace \forall v \in V: \dabs{\lambda v}
+         = \abs{\lambda} \dabs{v}$
+        \item $\dabs{x+y} \leq \dabs{x} + \dabs{y}$
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Sei $V$ ein euklidischer oder unitärer Vektorraum. Dann ist \[
+        x \mapsto \scp{x,x}^\frac{1}{2}\]
+    eine Norm auf $V$.
+\end{definition}
+\begin{remark}
+    Nicht jede Norm stammt aus einem Skalarprodukt bzw einem inneren Produkt!
+\end{remark}
+\begin{definition}
+    Sei $V$ ein $\K$ Vektorraums, $\K = \R \lor \K = \C$ mit dem Skalarprodukt
+    (oder inneren Produkt) $\stdscp$. \begin{itemize}
+        \item $x,y \in V$ mit $\scp{x,y} = 0$ heißen orthogonal zu einander. Wir
+        schreiben $x\perp y$.
+        \item Zwei Teilmengen $M_1,M_2 \subset V$ heißen zu einander orthogonal,
+        wenn \[
+            \forall x_1 \in M_1 \forall x_2 \in M_2: x_1 \perp x_2\]
+        Wir schreiben $M_1 \perp M_2$
+        \item Die Teilmenge $S\subset V$ heißt Orthonormalsystem, wenn \[
+            \forall x,y\in S: \scp{x,y} = \delta_{xy}, \text{ d.h. } \scp{x,y} =
+            \begin{cases}
+            1 & \fuer x=y\\
+            0 & \fuer x\neq y    
+            \end{cases}\]
+        \item Ist $\emptyset \neq M \subset V$ eine nichtleere Teilmenge, dann 
+        heißt \[
+            M^\perp \coloneqq \set{y \in V\mid \forall x \in M: \scp{x,y} = 0}\]
+        der zu $M$ orthogonale Unterraum.
+    \end{itemize}
+\end{definition}
+\begin{theorem}
+    Sei $V$ ein $\K$-Vektorraum $\KeRoC$ mit dem Skalarprodukt \stdscp
+    \begin{enumerate}
+        \item Ist $S$ ein Orthonormalsystem, dann ist $S$ linear unabhängig 
+        \item Ist $B = \set{b_1, \dots, b_n, \dots}$ eine abzählbare linear 
+        unabhängige Teilmenge von $V$, dann gibt es genau ein Orthonormalsystem
+        $S = \set{d_1, d_2, \dots}$ mit \[
+            d_k = \sum_{j \leq k} \alpha_{jk}b_j, \midspace \alpha_{jk} \in \K,
+            \smallspace j \leq k,\smallspace \alpha_{kk} > 0 \]
+        Insbesondere gilt \[
+        \forall I \in \N\lin{b_1, b_2, \dots, b_I} = \lin{d_1, d_2, \dots, d_I}\]
+        Gramm-Schmidtsche Orthogonalisierung.
+    \end{enumerate}
+\end{theorem}
+\begin{proof}\hfill
+    \begin{enumerate}
+        \item 
+        Sei $S\subset V$ ein Orthonormalsystem, sei $m\in \N$ und seien $v_1, \dots,
+        v_m \in S$, $\lambda_1, \dots, \lambda_m \in \K$ mit \[
+            \dsum_{j=1}^m \lambda_j v_j = 0\]
+        Für $1\leq k \leq m$ gilt \[
+            0 = \scp{0, v_k} = \scp{\dsum_{j=1}^m \lambda_j v_j, v_k} = 
+            \dsum_{j=1}^m \lambda_j \scp{v_j, v_k} \underset{(*)}{\underbrace{=}}
+            \lambda_k\]
+            (*): Da $S$ ein Orthonormalsystem ist gilt, dass $\forall x,y \in S:
+            \smallspace \scp{x,y} = \begin{cases}
+                1 & \fuer x=y\\
+                0 & \fuer x \neq y
+            \end{cases}$. Somit ist $S$ linear unabhängig.
+        \item Es gelte (2), d.h.:\[
+            d_k = \dsum_{j\leq k} \alpha_{jk}b_k, \midspace \alpha_{jk}\in \K, 
+            \smallspace j\leq k,\smallspace \alpha_{kk} > 0 \]
+            so ist \[
+                \lin{d_1, \dots, d_I} \subset \lin{b_1, \dots, b_I}\]
+            
+    \end{enumerate}
+\end{proof}

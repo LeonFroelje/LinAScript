@@ -1,0 +1,112 @@
+\begin{definition}
+Ein Körper $\mathbb{K}$ $(K,+,\cdot,0,1)$ ist eine nicht leere Menge $K$ auf die eine
+\begin{enumerate}
+    \item \textbf{Addition}\\
+    $+ :K\times K\rightarrow K$\\
+    $(a,b) \mapsto a + b$
+    \item und eine \textbf{Multiplikation (Produkt)}\\
+    $\cdot :K\times K\rightarrow K$\\
+    $(a,b) \mapsto a \cdot b$,
+\end{enumerate}
+definiert sind, so dass die Eigenschaften (A1), (A2), (A3), (A4), (M1), (M2), (M3), (M4) und (D) erfüllt sind.
+\begin{itemize}
+    \item \textcolor{blue}{(A1) Assoziativität:} Für alle $a,b,c \in K$ gilt
+    \begin{center}
+        $a + (b + c) = (a + b) + c$
+    \end{center}
+    \item \textcolor{blue}{(A2) Kommutativität:} Für alle $a,b \in K$ gilt
+    \begin{center}
+        $a + b = b + a$
+    \end{center}
+    \item \textcolor{blue}{(A3)} Es gibt ein Nullelement in $K$, \textcolor{blue}{das Nullelement}, welches wir mit 0 bezeichnen, mit der Eigenschaft, dass für alle $k \in K$
+    \begin{center}
+        $0 + k = k + 0 = k$
+    \end{center}
+    \item \textcolor{blue}{(A4)} Zu jedem $a \in K$ gibt es ein Element in $K$, welches wir mit $-a$ bezeichnen, mit
+    \begin{center}
+        $a + (-a) = (-a) + a = 0$,
+    \end{center}
+    Das Element $-a$ ist das \textcolor{blue}{zu a inverse Element bzgl. der Addition +}, oder das additive Inverse von $a$.
+    \item \textcolor{blue}{(M1) Assoziativität:} Für alle $a,b,c \in K$ gilt
+    \begin{center}
+        $a \cdot (b \cdot c) = (a \cdot b) \cdot c$
+    \end{center}
+    \item \textcolor{blue}{(M2) Kommutativität:} Für alle $a,b \in K$ gilt
+    \begin{center}
+        $a \cdot b = b \cdot a$
+    \end{center}
+    \item \textcolor{blue}{(M3)} Es gibt ein Element in $K$, \textcolor{blue}{das Einzelelement}, welches wir mit 1 bezeichnen und verschieden von 0 ist, mit der Eigenschaft, für alle $k \in K$
+    \begin{center}
+        $1 \cdot k = k \cdot 1 = k$
+    \end{center}
+    \item \textcolor{blue}{(M4)} Zu jedem $a \in K\diagdown \{0\}$, gibt es ein Element in $K$ , welches wir mit $a^{-1}$ bezeichnen, mit
+    \begin{center}
+        $a \cdot a^{-1} = a^{-1} \cdot a = 1$,
+    \end{center}
+    Das Element $a^{-1}$ ist das \textcolor{blue}{zu a inverse Element bzgl. der Multiplikation $\cdot$}, oder das multiplikativ Inverse von a.
+    \item \textcolor{blue}{(D) Distributivität} Für alle $a,b,c \in K$ gilt
+    \begin{center}
+        $(a + b) \cdot c = a \cdot c + b \cdot c$\\
+        $a \cdot (b + c) = a \cdot b + a \cdot c$
+    \end{center}
+\end{itemize}
+\end{definition}
+\begin{definition}
+\begin{itemize}
+    \item \textcolor{blue}{(a)} Sei $\mathbb{K}$ ein Körper. Dann ist $(\mathbb{K} \diagdown \{0\}, \cdot, 1)$ \textcolor{red}{assoziativ}, hat ein \textcolor{blue}{neutrales Element}, 1, und jedes Element $k \in \mathbb{K} \diagdown \{0\}$ hat ein \textcolor{green}{multiplikatives Inverses}. Eine Menge mit einer Operation die diese drei Eigenschaften hat ist eine \textcolor{orange}{Gruppe}.
+\end{itemize}
+\end{definition}
+\begin{definition}
+Eine Gruppe ist ein Paar $(G, \ast)$, welches aus einer nicht leeren Menge $G$, und einer Operation
+\begin{center}
+    $\ast : G \times G \rightarrow G$\\
+    $(g,h) \mapsto g \ast h$
+\end{center}
+besteht, welche die folgenden Eigenschaften erfüllt.
+\begin{itemize}
+    \item \textcolor{blue}{G1} $(g_1 \ast g_2) \ast g_3 = g_1 \ast (g_2 \ast g_3)$ für alle $g_1, g_2, g_3 \in G$
+    \item \textcolor{blue}{G2} Es existiert ein Element $e \in G$ so, dass $e \ast g = g$ für alle $g \in G$
+    \item \textcolor{blue}{G3} Für jedes $g \in G$ existiert $g' \in G$ so, dass $g' \ast g = e$.
+\end{itemize}
+Ein Element mit der Eigenschaft (G2) nennt man neutrales Element der der Gruppe. Für $g \in G$ nennt man ein Element mit der Eigenschaft (G3) Inverses zu $g$ und notiert es mit $g^{-1}$.
+\end{definition}
+\begin{definition}
+Eine Menge $M$ mit zwei Operationen + und $\cdot$, so dass (A1), (A2), (A3), (A4) sind in Bezug auf $\cdot$ erfüllt, und die Eigenschaft (D) ist auch erfüllt, heißt ein \textcolor{orange}{Ring}. Wenn dazu noch (M3) erfüllt ist, so heißt es \textcolor{red}{Ring mit 1}.\\
+Ein Ring mit 1, der (M2) und (M4) erfüllt ist ein Körper.
+\end{definition}
+\begin{proposition}
+Das bzgl. + inverse Element 0 in einem Körper $\mathbb{K} = (K, *, \cdot, 0, 1)$ ist eindeutig. Weiterhin, gibt es außer 0 kein weiteres Element $a \in K$ so, dass $k + a= k$ für alle $k \in K$.\\
+Das bzgl, $\cdot$ inverse Element 1 in einem Körper $\mathbb{K} = (K, *, \cdot, 0, 1)$ ist eindeutig. Weiterhin, gibt es außer 1 kein weiteres Element $a \in K$ so, dass $k \cdot a = k$ für alle $k \in K$.
+\end{proposition}
+\begin{theorem}
+Sei $m \in \mathbb{N}$. Dann ist $(\mathbb{Z}_m, +, \cdot, [0], [1])$ ein kommutativer Ring mit 1, d.h. die Eigenschaften (A1), (A2), (A3), (A4), (M1), (M2), (M3) und (D) sind erfüllt.
+\end{theorem}
+\begin{theorem}
+Sei $p \in \mathbb{N}$ eine Primzahl. Dann ist $(\mathbb{Z}_p, +, \cdot, [0], [1])$ ein Körper.
+\end{theorem}
+\begin{definition}
+Sei $\mathbb{K}$ ein Körper.
+\begin{center}
+    $\mathbb{K}[x] \coloneqq \{\sum_{i = 0}^m a_ix^i : a_i \in \mathbb{K}, m \in \mathbb{N}\}$
+\end{center}
+ist die Menge aller Polynome über $\mathbb{K}$ (d.h., die Koeffizienten sind Elemente aus $\mathbb{K}$).\\
+Mit den folgenden Operationen wird $\mathbb{K}[x]$ ein (Polynom-)Ring:
+\begin{enumerate}
+    \item $+ : \mathbb{K}[x] \times \mathbb{K}[x] \rightarrow \mathbb{K}[x]$\\
+    $(\sum_{i=0}^m a_ix^i, \sum_{i=0}^n b_ix^i) \mapsto \sum_{i=0}^{max\{n,m\}} (a_i + b_i)x^i$\\
+    wobei für $i > m ($bzw.$ j > n) a_i = 0$ (bzw. $b_j = 0)$ ist.
+    \item $\cdot :\mathbb{K}[x] \times \mathbb{K}[x] \rightarrow \mathbb{K}[x]$\\
+    $(\sum_{i=0}^m a_ix^i, \sum_{i=0}^n b_ix^i) \mapsto \sum_{i=0}^{m+n}(\sum_{k=0}^i a_kb_{i-k})x^i$\\
+    Es folgt aus den Eigenschaften des Körpers $\mathbb{K}$ und der Definition von $\mathbb{K}[x]$, dass $(\mathbb{K}[x],+,\cdot)$ ein Ring mit $1 = 1_{\mathbb{K}}$ ist.
+\end{enumerate}
+\end{definition}
+\begin{definition}
+Eine Permutation der Zahlen $\{!, \dots, n\}$ ist eine bijektive Abbildung $\pi:\{1, \dots,n\} \rightarrow \{1, \dots, n\}$. Die Menge aller Permuationen von  $1, \dots,n$ wird mit \textcolor{orange}{$S_{n}$} bezeichnet, und bildet mit der Komposition von Abbildungen, eine Gruppe, und diese heißt \textcolor{orange}{symmetrische Gruppe} zum Index $n$. Weiterhin hat die Gruppe $n!$ Elemente.
+\end{definition}
+\begin{definition}
+Sei $\pi \in S_n$ eine Permutation von $\{1,\dots,n\}$. Ein Fehlstand von $\pi$ ist ein Indexpaar $(i,j)$ mit $1 \leq i < j \leq n$ und $\pi(i) > \pi(j)$. Es ist 
+\begin{center}
+    \textcolor{blue}{Fehl($\pi$) = $\{(i,j) : (i,j)$ ein Fehlstand von $\pi \}$}      und\\
+    \textcolor{cyan}{sgn($\pi) = (-1)^{Fehl(\pi)}$}
+\end{center}
+\end{definition}

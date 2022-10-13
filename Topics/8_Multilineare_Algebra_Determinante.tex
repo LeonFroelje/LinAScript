@@ -1,0 +1,138 @@
+\newcommand{\vol}[1]{\ensuremath{\txt{vol}\left(#1\right)}}
+\begin{definition}[Determinante $1\times 1$ und $2\times 2$ Matrizen]
+    \begin{itemize}
+        \item Für $a \in \calM_1 (\mathbb{K})$ gilt $\det a = a$.
+        \item Sei $a \coloneqq \matrx{a&b\\c&d}$ Es ist $\det a = ad-bc$. 
+    \end{itemize}
+\end{definition}
+\begin{definition}[Laplace Entwicklung]
+    Ist $n\geq 2$ und $A\in \calM_(\K)$, so ist \[
+        \det A = \sum_{j=1}^n (-1)^{1+j} a_{1j}\det A_{1j}\]    
+\end{definition}
+\begin{definition}[Sarrus-Regel]
+    Für $A\in \calM_3$ gilt \[
+        \det A = a_{11}a_{22}a_{33} - a_{12}a_{21}a_{33} - a_{13}a_{22}a_{31} + 
+        a_{12}a_{23}a_{31} + a_{13}a_{21}a_{32} - a_{11}a_{23}a_{32}\]
+\end{definition}
+\begin{definition}[Determinantenabbildung]
+    Eine Determinantenabbildung auf $\calMn(\K)$ ist eine Abbildung $D:\calMn(\K)
+    \to \K$ so, dass\begin{enumerate}
+        \item $\forall i \in \set{1,\dots, n}$ ist $D$ linear in der i-ten Zeile,
+        also \[
+            D\left(\matrx{a_1\\\vdots\\a_i+\lambda b_i\\\vdots\\v_n}\right) = 
+            D\left(\matrx{a_1\\\vdots\\a_i\\\vdots\\a_n}\right) + \lambda D\left(\matrx{
+                a_1\\\vdots\\b_i\\\vdots\\a_n
+            }\right)\]
+        \item Hat $A\in \calMn(\K)$ zwei gleiche Zahlen, so ist $D(A) = 0$ (d.h.
+        $D$ ist alternierend) 
+        \item $D(I_n) = 1$
+    \end{enumerate}    
+\end{definition}
+\begin{theorem}\hfill\break
+    \begin{enumerate}[(i)]
+        \item \[
+            \det A = \sum_{j=1}^n (-1)^{1+j}a_{1j}\det A_{1j}\]
+        \item \[
+            \det A = \sum_{\sigma\in S_n}\txt{sgn}(\sigma)\prod_{i=1}^n a_{1\sigma}(i)\]
+            mit $S_n :$ Permutationen von $\set{1,2,\dots,n}$ und sgn$(\sigma):$ 
+            Fehltstände oder Signum von $\sigma$
+        \item \[\abs{\det\matrx{a&b\\c&d}} = \abs{ad-bc}\equiv\txt{Fläche des 
+        von $\matrx{a\\c}, \matrx{b\\c}$ aufgespannten Parallelogram.}\]
+        \item Determinantenabbildung $
+            D:\calMn(\K) \to \K:$\begin{enumerate}
+                \item Linear in jeder Zeile
+                \item Hat die Matrix $A\in \calMn(\K)$ zwei gleiche Zeilen, so ist 
+                $\det A = 0$
+                \item $\det I_n = n$
+            \end{enumerate}
+    \end{enumerate}
+\end{theorem}
+\begin{remark}
+    Man sucht in der Definition der Determinante die \glqq Eigenschaften des Volumens\grqq
+    in jeder Dimension, z.B. vol$(\lambda K) = \lambda^2$vol$(K), K\subset\R^2$.
+    \newline\textbf{Geometrische Motivation} \begin{enumerate}
+        \item Volumen ist Null wenn die 3 Vektoren auf einer Ebene liegen
+        \item Volumen des Wuerfels mit Kantenlänge 1 ist 1 
+        \item Verdoppelt man $v_1,v_2,v_3$ so wird das Volumen 8 mal größer \[
+            \vol{\lambda_1v_1, \lambda_2v_2, \lambda_3v_3} = \lambda_1\lambda_2
+            \lambda_3\vol{v_1,v_2,v_3}\]
+    \end{enumerate}
+    Volumen von Vektoren ist als Volumen des von $v_1,v_2,v_3$ aufgespannten 
+    Parallelepiped zu verstehen. Vektoren in einer Determinante sind in Zeilen zu 
+    verstehen.
+    \newline\textbf{Die Determinante erfüllt:}\begin{enumerate}
+        \item Determinante ist Null, wenn die 3 Vektoren l.a. sind
+        \item Die Determinante der Einheitsmatrix ist 1
+        \item $\det \matrx{\lambda_1x_1\\\lambda_2x_2\\\lambda_3x_3} = \lambda_1
+        \lambda_2\lambda_3 \det\matrx{x_1\\x_2\\x_3}$
+    \end{enumerate}
+    Die Determinante erfüllt also all die Eigenschaften die wir geometrisch haben
+    wollen.
+\end{remark}
+\begin{definition}
+Sei $A \in \calMn(\mathbb{K})$. TFAE
+\begin{enumerate}
+    \item det $A \neq 0$
+    \item $A$ ist invertierbar
+    \item Es gibt $B \in \calMn(\mathbb{K})$ mit $AB = I_n$
+    \item Rang$A=n$
+    \item $T_A: \mathbb{K}^n \to \mathbb{K}^n, \quad x\mapsto Ax$ ist bijektiv
+    \item $T_A: \mathbb{K}^n \to \mathbb{K}^n, \quad x\mapsto Ax$ ist surjektiv
+    \item $T_A: \mathbb{K}^n \to \mathbb{K}^n, \quad x\mapsto Ax$ ist injetiv
+    \item Kern$T_A=0$
+    \item Es gibt Elementarmatrizen $R_1,...,R_k$ so, dass $A=R_k...R_1\cdot I_n$
+    \item Mittels elementarer Zeilenumformungen bekommt man aus $A$ die Matrix $I_n$
+    \end{enumerate}
+\end{definition}
+
+\begin{theorem}
+Sei $D:\calMn(\mathbb{K}) \to \mathbb{K}$ eine Determinantenabbildung und sei \\ $A \in \calMn(\mathbb{K})$. Dann ist $A$ invertierbar genau dann, wenn $D(A) \neq 0$
+\end{theorem}
+
+\begin{theorem}
+Falls eine Determinantenfunktion det$:\calMn(\mathbb{K}) \to \mathbb{K}$ existiert, so ist diese eindeutug bestimme. Also, es gibt höchstens eine Determinantenabbildung.
+\end{theorem}
+
+\begin{theorem}
+Es gibt genau eine Determinantenabbildung auf $\mathbb{K}$ , nämlich
+\begin{align*}
+    \det A=\sum_{\sigma\in S_n}sgn(\sigma) \prod_{i=1}^n a_{i\sigma(i)}.
+\end{align*}
+Es reicht zu zeigen, dass det eine Determinantenabbildung ist, nach Satz (2 vorher)
+\end{theorem}
+
+\begin{theorem}
+Sei $A\in \calMn(\mathbb{K})$. Dann gilt 
+\begin{align*}
+    \det A=\det A^T
+\end{align*}
+\end{theorem}
+
+\begin{theorem}
+Seien $A,B\in \calMn(\mathbb{K})$. Es gilt
+\begin{align*}
+    \det(AB)=\det A \det B.
+\end{align*}
+\end{theorem}
+
+\begin{theorem}
+Die menge der invertierbaren Matzizen
+\begin{align*}
+    GL(n,\mathbb{K}) \coloneqq \{A\in \calMn(\mathbb{K}) : \det A \neq 0\}
+\end{align*}
+ist eine Gruppe bzgl. der Matrixmultiplikation
+\end{theorem}
+
+\begin{theorem}
+Sei $n\geq 2$ und $A=(a_{ij}) \in \calMn(\mathbb{K})$. Es gilt:
+\begin{enumerate}
+    \item Entwicklung nach der $i-$ten Zeile
+    \begin{align*}
+        \det A = \sum_{j=1}^n (-1)^{\textcolor{red}{i}+j}a_{\textcolor{red}{i}}\det A_{\textcolor{red}{i}j}
+    \end{align*}
+    \item Entwicklung nach der $j-$ten Spalte
+    \begin{align*}
+        \det A = \sum_{j=1}^n (-1)^{i+\textcolor{red}{j}}a_{i\textcolor{red}{j}}\det A_{i\textcolor{red}{j}}
+    \end{align*}
+\end{enumerate}
+\end{theorem}

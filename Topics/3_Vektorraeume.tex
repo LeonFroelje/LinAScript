@@ -1,0 +1,218 @@
+\begin{definition}
+    Sei $\K$ ein Körper. Ein Vektorraum $V=(V,+,\cdot)$ über $\K$ ist eine Menge $V$ für die
+    \begin{itemize}
+        \item Eine Summe (Addition)
+            \begin{align*}
+                +:&V \times V \to V \\
+                &(x,y) \mapsto x+y
+            \end{align*}
+        \item Ein Produkt (Skalarmultiplikation/ Produkt mit Skalaren)
+            \begin{align*}
+                \cdot :&\K\times V \to V \\
+                &(\lambda ,y) \mapsto \lambda \cdot y
+            \end{align*}
+    \end{itemize}
+    gegeben sind, so dass die folgenden Eigenschaften erfüllt sind:\\
+    \begin{itemize}[]
+        \item (A1) $(x+y)+z=x+(y+z)$ für alle $x,y,z\in V$,
+        \item (A2) $x+y=y+x$ für alle $x,y\in V$,
+        \item (A3) Es existiert ein Element in $V$, der Nullvektor, welchen wir mit $0=0_V$ bezeichnen, für den gilt $0_V+x=x+0_V=x$ für alle $x\in V$,
+        \item (A4) Für jedes $x\in V$ gibt es genau ein Element in $V$, welches mit $-x$ bezeichnet wird, für das gilt $x+(-x)=(-x)+x=0_V$
+    \end{itemize}
+    und
+    \begin{itemize}
+        \item (P1) $(a\cdot b)\cdot x=a\cdot (b\cdot x)$ für $a,b\in \K,x\in V$,
+        \item (P2) $1_\K\cdot x = x$ für alle $x\in V$,
+        \item (P3) $a\cdot(x+y) = a\cdot x +a\cdot y$ für alle $a\in \K,x,y\in V$,
+        \item (P4) $(a+b)\cdot x = a\cdot x + b\cdot x$ für alle $a,b\in \K, x\in V$.
+    \end{itemize}
+\end{definition}
+
+\begin{remark}
+    Sei $V=(V,+,\cdot)$ ein VR über den Körper $\K$
+    \begin{enumerate}
+        \item $(V,+,0_V)$ ist eine Gruppe, da (A1),(A3),(A4) erfüllt sind. Es gilt auch (A2), und somit ist + kommitativ.
+        \item Eine Gruppe $(G,\circ,e)$, die (A2) erfüllt heißt abelsch (oder kommutativ) (Hier bezeichnet e das neutrale Element von Gin Bezug auf $\circ$
+    \end{enumerate}
+\end{remark}
+\newpage
+\begin{lemma}
+ In einem $\K$-VR $V$ gilt für alle $v\in V$ und $\lambda \in \K$:
+ \begin{enumerate}
+    \item $0_\K \cdot v = 0_V$ und $\lambda \cdot 0_v = 0_V$
+    \item $(-\lambda)\cdot v = -\lambda \cdot v=\lambda(-v)$. Insbesondere $(-1)\cdot v = -v$.
+    \item $\lambda \cdot v = 0 \leftrightarrow \lambda = 0_\K$ oder $v=0_v$ (in $V$)
+ \end{enumerate}
+\end{lemma}
+
+\begin{definition}
+    Sei $\K$ ein Körper und $V$ ein $\K$-VR.
+    \begin{enumerate}
+        \item Sei $m\in\N_0$ und $v_1,\dotsb,v_m \in V$. Dann ist $w\in V $ eine Linearkombination von $v_1\dotsb,v_m$ falls $\lambda_1,\dotsb,\lambda_m\in \K$ esistieren mit (ist $m=0$, so haben wir Keinen Vektor)
+        \begin{align*}
+            w=\lambda_1 \cdot v_1+\dotsb \lambda_m\cdot v_m
+        \end{align*}
+        \item Sei $S\subset V$ und $w\in V$. Der Vektor $w\in V$ ist eine Linearkombination von Vektoren aus $S$ falls es $m \in \N_0, \lambda_1,\dotsb,v_m\in\K,v_1,\dotsb,v_m\in S$ gibt, mit
+        \begin{align*}
+            w=\lambda_1 \cdot v_1 + \dotsb + \lambda_m v_m = \sum_{i=1}^{m}\lambda_1\cdot v_i
+        \end{align*}
+    \end{enumerate}
+\end{definition}
+
+\begin{definition}
+    Sei $\K$ ein Körper und $V$ ein $\K$-VR. Die Teilmenge $U\subset V$ heißt Unterraum (oder Untervektorraum, oder linearer Teilraum) von $V $, wenn $(U,+,\cdot) $ ein Vektorraum ist, wobei $+$ und $\cdot$ die im Vektorraum $V=(V,+,\cdot)$ definierten Operationen sind.\\
+    Eigene(Lennarts zugabe): Der Unterraum eines Vektorraums ist auch ein Vektorraum\\
+    \\
+    Unterraumkriterium:\\
+    Sei $\K$ ein Körper und $V$ ein $\K$-VR. Die Teilmenge $U\subset V $ ist ein Unterraum von $V$ genau dann, wenn
+    \begin{enumerate}
+        \item (U1) $U\neq \emptyset$
+        \item (U2) für alle $x,y\in U$ ist $x+y\in U$
+        \item (U3) für alle $\lambda \in \K$ und $x\in U$ ist $\lambda\cdot x \in U$
+    \end{enumerate}
+\end{definition}
+\newpage
+\begin{remark}
+\quad \\
+    \begin{enumerate}
+        \item ist $(V,+,\cdot)$ ein VR und $U$ ein Unterraum von $V$, so  ist $0_V=0_U$.
+        \item Dotation: Wir schreiben $U\leq V$um zu bezeichnen, dass $U$ ein Unterraum von $V$ ist,d.h.,
+        \begin{enumerate}
+            \item $U\subset V$
+            \item $U$ hat die Vektorraumstruktur mit den von $V$ vererbten Operationen $+,\cdot$
+        \end{enumerate}
+    \end{enumerate}
+\end{remark}
+
+\begin{proposition}
+Sei $V $ein $\K$-VR. Sind $W_i, i\in I$, Unterräume von V, so ist 
+\begin{align*}
+    \bigcap_{i\in I} W_i \leq V
+\end{align*}
+auch ein Unterraum von V.
+\end{proposition}
+
+\begin{definition}
+    Sei $V$ ein $\K$-VR und $M\subset V$ eine Teilmenge von $V$. Dann heißt
+    \begin{align*}
+        \text{lin} M&\coloneqq \bigcap\{U\ :\ M\subset U,\ U\leq V\text{ ist ein Unterraum von } V\} \\
+        &= \bigcap_{M\subset U\leq V}U
+    \end{align*}
+    von $M$ erzeugter Unterraum, von $M$ aufgespannter Unterraum, Erzeugnis oder lineare hülle von $M$.
+    \begin{itemize}
+        \item Alternative Notation für die lineare Hülle: span$M$ oder $\langle M\rangle$
+        \item Aus Proposition (die vorherige) folgt, dass lin$M$ ein Unterraum von $V$ ist, da der Durchschnitt nicht leer ist: $M\subset V$ und $ V\leq V$
+        \item lin$\emptyset = \{0\}$
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+Sei $V$ ein $\K$-VR und $M\subset V$ eine nicht leere Teilmenge.
+Dann besteht lin$M$ aus allen Linearkombinationen von $M$ d.h.,
+\begin{align*}
+    \text{lin} M =\left\{\sum_{i=0}^n \alpha_i v_i\ :\ n\in\N,\alpha_i\in\K,v_i \in M,\ 1\leq i\leq n\right\}
+\end{align*}
+\end{theorem}
+
+\begin{definition}
+    Sei $\mathcal{M}$ eine Menge von Unterräumen von $V$. Die Summe dieser Menge $\mathcal{M}$ ist
+    \begin{align*}
+        \sum \mathcal{M} = \sum_{U\in \mathcal{M}} \coloneqq \left\{ u_1+\dotsb + u_n\ :\ \N_0, u_i\in\bigcup \mathcal{M} \text{ für } 1\leq i \leq n \right\}
+    \end{align*}
+    \begin{itemize}
+        \item Für endlich viele $U_1,\dotsb, U_m\leq V$ ist 
+        \begin{align*}
+            U_1+\dotsb+U_m=\{u_1+\dotsb+u_m \ :\ u_i \in U_i, 1\leq i \leq m\}
+        \end{align*}
+        \item Ist $\mathcal{M}=\emptyset$, so ist $\sum \mathcal{M}=\{0_V\}$
+    \end{itemize}
+\end{definition}
+
+\begin{theorem}
+Sei $\mathcal{M}$ eine Menge von Unterräumen von $V$. Die Summe $\sum\mathcal{M}$ ist ein Unterraum von $V$.
+\end{theorem}
+
+\begin{definition}
+$0_V$ lässt sich \textit{nicht-trivial} als Linearkombination von $v_1,\dotsb,v_m\in V$ darstellen, $m\in \N_0$, d
+falls es $\alpha_i\in\K, i=1,\dotsb m$ gibt, mit 
+\begin{itemize}
+    \item $\alpha_1v_1+\dotsb\alpha_m v_m = 0_V$
+    \item mindestens ein $\alpha_i, i=1,\dotsb,m$, ist nicht Null (in $\K$).
+\end{itemize}
+\end{definition}
+
+\begin{remark}
+Die Vektoren $v_1,\dotsb,v_m$ in der vorigen Definition müssen nicht notwendigerweise paarweise verschieden sein!
+\begin{align*}
+    0=v_1+(-1)v_1
+\end{align*}
+mit $v_1\neq0_V$ und so ist $0_V$ eine \textit{nicht-triviale Linearkombination} von $v_1,v_2\coloneqq-v_1$.
+\end{remark}
+
+\begin{definition}
+Sei $M\subset V$. Dann ist $M$ linear abhängig falls es $m\in \N$ und $v_1,\dotsb,v_m\in V$ paarweise verschieden gibt, so dass sich $0_V$ als \textit{nicht-triviale Linearkombination}
+von $v_1,\dotsb,v_m$ darstellen lässt.\\
+Ist $M$ nicht linear abhängig, so ist $M$ linear unabhängig.
+\end{definition}
+
+\begin{theorem}
+Sei $V$ ein $\K$-VR und $M\subset V$. Genau dann ist M linear unabhängig, wenn aus
+\begin{align*}
+    0=\alpha_1 v_1 +\dotsb+\alpha_m v_m
+\end{align*}
+für $m\in\N_0$ und $v_1,\dotsb,v_m\in M$ paarweise verschieden und $\alpha_1,\dotsb,\alpha_m\in\K$, folgt, dass $\alpha_1=\dotsb=\alpha_m=0$.
+\end{theorem}
+
+\begin{theorem}
+Sei $V$ ein $\K$-VR und $M\subset V$.
+\begin{itemize}
+    \item Genau dann ist $M$ linear abhängig, wenn $v\in M$ existiert mit 
+    \begin{align*}
+        \text{lin}(M\backslash\{v\})=\text{lin}M.
+    \end{align*}
+    \item Genau dann ist $M$ linear unabhängig, wenn für alle $v\in M$ gilt
+    \begin{align*}
+        \text{lin}(M\backslash\{v\})\neq\text{lin}M.
+    \end{align*}
+\end{itemize}
+\end{theorem}
+
+\begin{remark}
+Sei$V$ ein $\K$-VR und seien $M_1\subset M_2 \subset V$.
+\begin{itemize}
+    \item Ist $M_1$ l.a., so ist auch $M_2$ linear abhängig.
+    \item Ist $M_2$ l.u., so ist auch $M_1$ linear unabhängig.
+\end{itemize}
+\end{remark}
+
+\begin{definition}
+Sei $V$ ein $\K$-VR und $B\subset V$ eine Teilmenge. Die Teilmenge $B$ ist eine Basis von $V$ wenn:
+\begin{enumerate}
+    \item  $V=$lin$B$, d.h., $V$ ist das Erzeugnis von $B$ (oder $B$ ist das Erzeugendensystem von V)
+    \item $B$ ist l.u.
+\end{enumerate}
+Für den Nullraum$\{0_V\}=$lin$\emptyset$, definieren wir $\emptyset$ als Basis
+\end{definition}
+
+\begin{remark}
+Ist $B = \{v_1,\dotsb, v_m\}$ eine endliche Basis von $V$, mit paarweise verschiedenen Elementen $v_1,\dotsb, v_m$, so sagen wir auch $\text{“}v_1,\dotsb, v_m$ bilden eine Basis von $V\text{”}$.
+\end{remark}
+
+\begin{definition}
+Ist $V$ ein $\K$-VR und ist $\{v_1,\dotsb, v_n\}$ eine Basis von $V$, mit paarweise verschiedenen Elementen, so nennen wir $(v_1,\dotsb, v_n)$ eine geordnete Basis von $V$
+\end{definition}
+
+\begin{theorem}
+Sei $V$ ein $\K$-VR und $M\subset V$. Genau dann ist $M$ l.u., wenn jedes $v \in $lin$ M $ sich auf genau eine Weise als Linearkombination von paarweise verschiedenen Vektoren aus $M$ darstellen lässt.
+\end{theorem}
+
+\begin{theorem}
+Seien $v_1,\dotsb,v_m\in V, 1\leq i\leq m$. Genau dann ist $\{v_1,\dotsb,v_m\}$ eine Basis des $\K$-VR $V$, falls für alle $v\in V$ gilt:
+\begin{item}
+$v=\sum_{i=1}^m k_i v_i$ mit geeigneten $k_i\in\K, 1\leq i \leq m$
+\item Ist $v=\sum_{i=1}^m k_i v_i=\sum_{i=1}^m k_i' v_i$ so ist $k_i=k_i', 1\leq i \leq m$
+\end{item}
+Mit anderen Wörtern: Genau dann ist $\{v_1,\dotsb,v_m\}$ eine Basis von $V$, wenn jedes $v\in V$ eine eindeutige Linearkombination der $v_i$ ist.
+\end{theorem}
+
+\newpage

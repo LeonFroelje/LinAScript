@@ -1,0 +1,441 @@
+\begin{definition}
+Sei $\K$ ein Körper. 
+Ein Polynom mit Koeffizienten in der Unbekannten $t$ (kurz: \textcolor{cyan}{ein Polynom über $\K$}) ist ein Ausdruck der Form
+\begin{align*}
+    p=\alpha_0t^0+\alpha_1t^1+\cdots+\alpha_nt^n
+\end{align*}
+für $n\in \N_0$, und $\alpha_i\in\K$, $i=0,\dots,n$.
+\end{definition}
+
+\begin{remark}[{Notation: $\K[t]$}]
+\,\\Die Menge aller Polynome über $\K$ bezeichnen wir mit $\K[t]$:
+\begin{align*}
+    \K[t]:=\left\{\sum_{i=0}^{m}\alpha_it^i : \alpha_i\in\K, m\in\N\right\}
+\end{align*}
+\textcolor{red}{Warnung!} Achten sie bitte darauf, dass $m$ in der obigen Definition nicht fest ist.\\
+\textcolor{red}{Konvention/Definition}\\
+Wir setzen $t^0:=1_\K$
+\textcolor{red}{Wir bezeichnen mit $\K$ immer einen Körper}
+\end{remark}
+
+\begin{remark}[{Nullpolynom \& Gleichheit zweier Polynome}]
+\,
+\begin{itemize}
+    \item Seien $p,q\in\K[t]$, mit $p=\sum_{i=0}^m\alpha_it^i$ und $q=\sum_{i=0}^n\beta_it^i$. 
+    Es ist $p=q$ genau dann, wenn $\alpha_i=\beta_i$ für $0\leq i \leq \max{\{m,n\}}$ (Koeffizientenvergleich), wobei $\alpha_i = 0$ für $i>m$ und $\beta_j = 0$ für $\beta_j=0$ für $j>n$.
+    \item Das Polynom $p=0\in\K[t]$ ist das Nullpolynom
+\end{itemize}
+\end{remark}
+
+\begin{definition}[Grad eines Polynoms]
+Sei $p\in\K[t]$, $p=\alpha_0t^0+\alpha_1t^1+\cdots+\alpha_nt^n$ mit $\alpha_n\neq0$.
+Dann heißt n \textcolor{blue}{Grad} von $p$ und wird mit $\deg(p)$ bezeichnet.
+Wir setzen den Grad des Nullpolynoms $p=0$ gleich $-\infty$, also $\deg{0}=-\infty$.
+\end{definition}
+
+\begin{definition}\,
+\\Sei $p\in\K[t]$, $p=\sum_{i=0}^m\alpha_it^i$.
+\begin{itemize}
+    \item Ist $\deg{p}=m\in\N_0$, so heißt der nicht Null Koeffizient $\alpha_m$ der \hl{Leitkoeffizient} von $p$.
+    \item Ist $\alpha_m=1$ oder $p=0$, so sagen wir, dass $p$ \hl{normiert} ist. Für $\alpha_m=1$ nutzt man auch \hl{monisch}.
+    \item ist $\deg{p}\leq0$, so ist $p$ ein \hl{konstantes} Polynom
+\end{itemize}
+\end{definition}
+
+\begin{example}[{aus der LinA1}]\,
+\\Sei $\K$ ein Körper und ja...
+\end{example}
+
+\begin{example}[{5.1.5 der LinA 1}]\, % TODO: das als Hyperlink
+\\Und $\R[x]$ ist KEIN Körper weil kein Inverses.
+\end{example}
+
+\begin{proposition}[{Ringstruktur des $\K[t]$}]\,\\
+Seien $p,q\in\K[t]$, mit $p=\sum_{i=0}^m\alpha_it^i$ und $q=\sum_{i=0}^n\beta_it^i$ für $m,n\in\N_0$ und sei o.B.d.A. $n \leq m$.
+Wir betrachten die folgende Addition und Multiplikation in $\K[t]$:
+\begin{itemize}
+    \item $p+q=\sum_{i=0}^{\max{\{n,m\}}}(\alpha_i+\beta_i)t^i$, wobei für $n<j<m$ gelte $\beta_j:=0$.
+    \item $p \cdot q = \sum_{i=0}^M\gamma_it^i$ wobei $\gamma_k=\sum_{i+j=k}\alpha_i\beta_i$
+\end{itemize}
+Das Nullpolynom ist das neutrale Element der Summe und $1_\K=t^0$ das neutrale Element des Produktes.\\
+Mit diesen Operationen wird $(\K[t],+,\cdot,0,1$ zu einem kommutativen Ring mit 1. 
+Der Beweis wird dem geneigten Leser als Aufgabe überlassen.
+\end{proposition}
+
+\begin{example}
+ja ne kein bock
+\end{example}
+
+\begin{lemma}\,\\
+Für zwei Polynome $p,q\in\K[t]\setminus\{0\}$ gilt:
+\begin{itemize}
+    \item $\deg(p + q) \leq \max\{\deg(p),\deg(q)\}$
+    \item $\deg(p \cdot q)=\deg(p)+\deg(q)$
+\end{itemize}
+\end{lemma}
+
+\begin{remark}\,
+\begin{itemize}
+    \item[1.] Sei $p(t)=\alpha_0t^0+\alpha_1t^1+\cdots+\alpha_mt^m\in\K[t]$ und sei $\lambda\in\K$. 
+    Da es in $\K$ eine Summe und ein Produkt gibt, können wir in dem Ausdruck $p(t)$ die Unbekannte $t$ durch $\lambda$ ersetzen und einen in $\K$ sinnvollen Ausdruck bekommen.
+    \item[2.] Formell ist dies eine Abbildung
+    \begin{align*}
+        \K&\rightarrow\K\\
+        \lambda&\rightarrow p(\lambda):=\alpha_0\lambda^0+\alpha_1\lambda^1+\cdots+\alpha_m\lambda^m
+    \end{align*}
+    Hier gilt $\lambda^0:=1_\K$.
+    \item[3.] Man sollte nicht das Körperelement $p(\lambda)$ mit dem Polynom $p\in\K[t]$ verwechseln. \textcolor{red}{Wir werden in kommenden Kapiteln andere Objekte, wie z.B. Matrizen in Polynome einsetzen.}
+\end{itemize}
+\end{remark}
+
+\begin{definition}
+ACHTUNG! Definition ist in den Folien (4.1.12 am 09.06.) voll komisch, ich hoffe einfach mal, dass das hier das eigentlich gemeinte ist, aber es könnte was fehlen.\\
+Sei $\K[t]$ der kommutative Ring (mit 1) der Polynome.
+Wir können auf $\K[t]$ die Teilbarkeitsbegriffe, welche auf $\Z$ in LinA 1 definiert und  benutzt wurden, auch definieren:
+\begin{enumerate}
+    \item Wenn es für $p, s \in \K[t]$, ein Polynom $q \in K[t]$ gibt, mit $p \cdot q = s$, dann heißt $s$ ein Teiler von $p$. Wir schreiben $s | p$, gelesen ``$s$ teilt $p$ (in $\K[t]$)''.
+    %müsste das nicht sein ...p ein Teiler von s. Wir schreiben $p|s$, gelesen
+    %"p teilt s"?
+    \item Zwei Polynome $p, s \in \K[t]$ heißen teilerfremd, wenn aus $q | p$ und $q | s$ für $q \in \K[t]$ folgt, dass $q$ ein konstantes Polynom ist.
+    \item Ein \hl{nicht konstantes Polynom} $p \in \K[t]$ heißt irreduzibel (über $\K$), wenn aus $p = s \cdot q$, für $s, q \in\K[t]$ folgt, dass $s$ oder $q$ ein konstantes Polynom ist.
+    \item Ist $r \in R$ ein Teiler von 1 ($r |_R 1$), so heißt $r$ eine Einheit. Einheiten von $\K[t]$?
+\end{enumerate}
+\end{definition}
+
+Sei $V$ ein $n$-dimensionaler $\K$-VR, $B$ eine Basis von $V$, $T:V\to V$ eine lineare Abbildung und $A=[T]_B^B\in \mathcal{M}_n(\K)$ die (Darstellungs)Matrix der linearen Abbildung $T$ bzgl. der Basis $B$.
+
+\begin{remark}\,
+\begin{enumerate}
+    \item Die Eigenschaft der Irreduzibilität ist nur für Polynome von Grad mindestens 1 definiert.
+    \item Ein Polynom vom Grad 1 ist stets irreduzibel.
+    \item Die Irreduzibilität eines Polynoms vom Grad mindestens 2 hängt vom Körper ab!
+\end{enumerate}
+\begin{itemize}
+    \item $t^2-2$ irreduzibel in $\Q[t]$ und reduzibel in $R[t]$
+    \item $t^2+1$ irreduzibel in $\R[t]$, reduzibel in $\C[t]$ und $\F_2[t]$
+\end{itemize}
+\end{remark}
+
+\begin{theorem}[Polynomdivision]\,
+Seien $p\in\K[t]$ und $s\in\K[t]\setminus\{0\}$. 
+Es gibt eindeutig bestimmte Polynome $q,r\in\K[t]$ mit
+\begin{align*}
+    p&=s\cdot q+r \text{und} \deg(r)<\deg(s)
+\end{align*}
+\end{theorem}
+
+\begin{definition}[Nullstelle eines Polynoms]
+Sei $p(t)\in\K[t]$ ein Polynom und $\lambda\in\K$. Gilt $p(\lambda)=0$, so heißt $\lambda$ eine Nullstelle (NST) von $p$
+\end{definition}
+
+\begin{corollary}[Satz von Ruffini]
+Sei $\lambda\in\K$ eine NST des Polynoms $p\in\K[t]$.
+Es gibt ein eindeutig bestimmtes Polynom $q\in\K[t]$ mit
+\begin{align*}
+    p=(t-\lambda)\cdot q
+\end{align*}
+\end{corollary}
+
+\begin{definition}
+Seien $p\in\K[t]$ und $\lambda\in\K$ eine NST von $p$.
+Dann ist die \hl{Vielfachheit der NST $\lambda$} die eindeutig bestimmte natürliche Zahl $m$, so dass
+\begin{align*}
+    p=(t-\lambda)^m\cdot q
+\end{align*}
+für ein Polynom $q\in\K[t]$ mit \hl{$q(\lambda)\neq0$}.
+(Folgt aus wiederholtem Anwenden von vorigem Korollar)
+\end{definition}
+
+\begin{corollary}
+Sind $\lambda_1,\dots,\lambda_k\in\K$ paarweise verschiedene NST des Polynoms $p\in\K[t]$ mit jeweiligen Vielfachheiten $m_1,\dots,m_k$, so gibt es ein eindeutig bestimmtes Polynom $q\in\K[t]$ mit 
+\begin{align*}
+    p&=(t-\lambda_1)^{m_1}\dots(t-\lambda_k)^{m_k}\cdot q
+\end{align*}
+und $q(\lambda_j)\neq0$ für $j=1,\dots,k$.\\
+Insbesondere ist die Summe der Vielfachheiten aller paarweise verschiedenen NST eines Polynoms $p\in\K[t]\setminus\{0\}$ kleiner oder gleich $\deg(p)$
+\end{corollary}
+
+\begin{theorem}\,
+Jedes Polynom $p=\alpha_0+\alpha_1t+\cdots+\alpha_nt^n\in\K[t]\setminus\{0\}$ besitzt eine bis auf die Reihenfolge eindeutige Zerlegung
+\begin{align*}
+    p = \mu p_1\cdot\ \cdots\ \cdot p_k
+\end{align*}
+mit $\mu\in\K$, und $p_i$ \hl{monischen} \hl{irreduziblen} Polynomen in $\K[t]$.
+\end{theorem}
+
+\begin{definition}[Charakteristisches Polynom]\,
+Das \hl{charakteristische Polynom} von $T$, bzw. von $A$, ist definiert als 
+\begin{align*}
+    \chi_A=\chi_T&=\det(\lambda E_n-A)\\
+    &=\det
+    \left( \begin{matrix}
+        \lambda-a_{11} & -a_{12} & \cdots & -a_{1\ n-1} & -a_{1n} \\
+        -a_{21} & \lambda-a_{22} & \cdots & -a_{2\ n-1} & -a_{2n} \\
+        \vdots & \vdots & \ddots & \vdots & \vdots 
+        \\a_{n-1\ 1} & -a_{n-1\ 2} & \cdots & -a_{n-1\ n-1} & -a_{n-1\ n} \\
+        -a_{n1} & -a_{n2} & \cdots & -a_{n\ n-1} & \lambda-a_{nn} 
+    \end{matrix}\right)
+\end{align*}
+\end{definition}
+
+\begin{remark}\,
+\begin{itemize}
+    \item Die Basis $B$ spielt keine Rolle in der Definition: Wir werden es später beweisen
+    \item Dass $\chi_A\in\K[\lambda]$, also dass $\chi_A$ ein Polynom (in $\lambda$ ist), folgt aus der Definition von Determinante (z.B. mittels der Summe über die Permutationsgruppe).
+\end{itemize}
+\end{remark}
+
+\begin{remark}\,
+\begin{align*}
+    \det(A) &= \sum_{\sigma\in S_n} \text{sign}(\sigma) \prod_{i=1}^{n} a_{i\sigma(i)}\\
+    \det(\lambda E_n-A) &= \sum_{\sigma\in S_n} \text{sign}(\sigma) \prod_{i=1}^{n} (\delta_{i\sigma(i)}\lambda-a_{i\sigma(i)})
+\end{align*}
+\end{remark}
+
+\begin{lemma}\,
+Sei $A\in\mathcal{M}_n(\K)$. Es gilt: $\chi_A=\chi_{A^T}$
+\end{lemma}
+
+\begin{lemma}\,
+Sei $A\in\mathcal{M}_n(\K)$. Es gilt
+\begin{align*}
+    \chi_a&=\lambda^n+p_{n-1}\lambda^{n-1}+\cdots+p_1\lambda+p_0\text{,}
+\end{align*}
+mit $p_{n-1}=-\text{Sp}(A)$ und $p_0=(-1)^n\det A$.
+Insbesondere ist $\chi_A$ ein monisches Polynom vom Grad $n$.
+\end{lemma}
+
+\begin{definition}\,
+Sei $V$ ein $n$-dimensionaler $\K$-Vektorraum, $B$ eine Basis von $V$, $T:V\to V$ eine lineare Abbildung und $A=[T]_B^B\in\mathcal{M}_n(\K)$ die Darstellungsmatrix der linearen Abbildung bezüglich der Basis $B$.\\
+Sei $\lambda\in\K$.
+Dann heißt $\lambda$ \textcolor{red}{Eigenwert} von $T$ (bzw. von $A$) falls es zu $\lambda$ einen Vektor $v\in V\setminus\{0\}$ gibt, mit
+\begin{align*}
+    T(v)&=\lambda v \text{  bzw.  } A\cdot(v)_B=\lambda(v)_B
+\end{align*}
+Jeder solche Vektor $0\neq v\in V$ heißt \textcolor{red}{Eigenvektor} von $T$ (bzw. von $A$) zum Eigenwert $\lambda$.
+\end{definition}
+
+\begin{definition}\,
+Sei $\lambda\in\K$ ein Eigenwert von $T$ (bzw. von $A$). Dann ist
+\begin{align*}
+    \text{Eig}(T,\lambda)=\{v\in V:Tv=\lambda v\}
+\end{align*}
+der \textcolor{red}{Eigenraum} von $T$ (bzw $A$) zum Eigenwert $\lambda$
+\end{definition}
+
+\begin{remark}
+Alle Vektoren des Eigenraums Eig$(T,\lambda)$, \textcolor{orange}{bis auf den Nullvektor (!)}, sind die Eigenvektoren von $T$ (bzw von $A$) zum Eigenwert $\lambda$.
+Wir bemerken, dass $T(0_v)=\lambda0_V$ immer gilt (und für alle $\lambda!$)
+\end{remark}
+
+\begin{remark}\,
+Während $v=0_V$ \textcolor{red}{\hl{NIEMALS!!!!}} (per Definition) ein Eigenvektor ist, kann $\lambda=0_\K$ Eigenwert einer linearen Abbildung (bzw einer Matrix) sein: $Tv=0_\K v$ für $v\neq0$
+\end{remark}
+
+\begin{theorem}\,
+\begin{enumerate}
+    \item Genau dann ist  $\lambda\in\K$ ein Eigenwert von $T$ (bzw. von $A$), wenn $\lambda $ eine NST den char. Polynoms $\chi_T$ ist, also wenn $\chi_t(\lambda)=0$
+    \item Genau dann ist $\lambda=0_\K$ ein Eigenwert von $T$ (bzw. von $A$), wenn det$A=0$.
+    \item Genau dann ist $\lambda\in\K$ ein Eigenwert von $T$ (bzw. von $A$), wenn $\lambda$ ein Eigenwert von $A^T$ ist.
+\end{enumerate}
+\end{theorem}
+
+\begin{remark}
+Es folgt aus dem vorherigen Satz, dass
+\begin{align*} 
+   A \text{ invertierbar} &\Leftrightarrow A\in GL(n,\K) \Leftrightarrow 0_\K \text{ kein EW von } A \text{ ist}\\
+   &\Leftrightarrow 0_\K \text{ keine NST von } \chi_A \text{ist}
+\end{align*}
+\end{remark}
+
+\textcolor{red}{Ist jedes Polynom das char. Polynom irgendeiner Matrix?}\\
+Sei $p\in\K[x]$ ein monisches Polynom vom Grad n. Wir fragen ob es eine Matrix $A\in\mathcal{M}_n(\K)$ gibt, so dass $\chi_A=p$.\\
+Die Antwort ist ja, und diese Antwort ist konstruktiv.
+
+\begin{theorem}
+Sei $n\in\N$ und $p=t^n+\beta_{n-1}t^{n-1}+\dotsb+\beta_1t+\beta_0\in\K[t]$ ein monisches Polynom vom Grad $n$.\\
+Dann ist $p$ das char. Polynom der Matrix
+\begin{align*}
+   \left( \begin{matrix} 0 & 0 & 0 & \dotsb & 0 & -\beta_0 \\ 1 & 0 & 0 & \dotsb & 0 & -\beta_1 \\ 0 & 1 & 0 & \dotsb & 0 & -\beta_2 \\ 0 & 0 & 1 & \dotsb & 0 & -\beta_3 \\ \vdots & \vdots & \vdots & \ddots & \vdots & \vdots \\ 0 & 0 & 0 & \dotsb & 1 & -\beta_{n-1} \end{matrix} \right) 
+\end{align*}
+Diese Matrix heißt Begleitsmatrix von $p$.
+\end{theorem}
+
+\begin{theorem}
+Seien $A,B\in\mathcal{M}_n(\K)$ ähnliche Matrizen. Dann ist
+\begin{align*}
+    \chi_A=\chi_B
+\end{align*}
+\end{theorem}
+
+\begin{remark}
+Die Umkehrung gilt nicht!1!!1!!!111!!1!elf!!!
+\end{remark}
+
+\begin{corollary}
+Sei $V$ ein $n$-dimensionaler $\K$-VR, $B$ eine Basis von $V$, $T:V\to V$ eine lineare Abbildung und $A=[T]_B^B\in\mathcal{M}(\K)$ die (Darstellungs)Matrix der linearen Abbildung $T$ bzgl. der Basis $B$.
+Das char. Polynom von $T$ ist von der Wahl der Basis $B$ auf $V$ unabhängig, d.h., ist $B'$ eine andere Basis von $V$, und 
+$C=[T]_{B'}^{B'}$, so ist 
+\begin{align*}
+    \chi_T=\chi_A=\chi_C
+\end{align*}
+\end{corollary}
+
+\begin{remark}
+Seien $A,B\in \mathcal{M}_n(\K)$ Matrizen.
+\begin{enumerate}
+    \item Ist $\lambda\in\K$ so, dass $\chi_A(\lambda)=0_\K=\chi_B(\lambda)$, so haben die beiden Matrizen einen gemeinsamen Eigenwert.
+    \item Gilt $\chi_A=\chi_B$ (als Polynome), so haben $A$ und $B$ die gleichen Eigenwerte.
+\end{enumerate}
+\end{remark}
+
+\begin{corollary}
+Sei $V$ ein $n$-dimensionaler $\K$-VR und $T:V\to V$ ein Endomorphismus. Dann hat $T$ höchstens $n$ verschiedene Eigenwerte, denn deg$\chi_T=n$.
+\end{corollary}
+
+\begin{definition}
+Sei $V$ ein $n$-dimensionaler $\K$-VR und $T:V\to V$ ein Endomorphismus, und sei $\lambda\in\K$ ein Eigenwert von $T$.
+\begin{enumerate}
+    \item Die natüliche Zahl
+    \begin{align*}
+        g(T,\lambda)=\text{dimEig}(T,\lambda)
+    \end{align*}
+    heißt geometrische Vieldachheit des Eigenwerttes $\lambda$ von $T$
+    \item Die Vielfachheit von $\lambda$ als NST des char. Polynoms $\chi_T$ heißt algebraische Vielfachheit des Eigenwertes $\lambda$ von $T$. Wir bezeichnen es mit a$(T,\lambda)=k$, so ist $\chi_T=(t-/lambda)^k\cdot q$ mit $q\in\K[t]$ und $q(\lambda)\neq0$
+\end{enumerate}
+\end{definition}
+
+\begin{remark}
+(Lennarts)\\
+Wenn ein Eigenwert z.B. $2$ mal vorkommt dann ist die algebraische Vielfachheit des Eigenwerts genau 2\\
+Die geometrische Vielfachheit ist gleich der Anzahl der Vektoren im Eigenraum. \\
+Die geometrische Vielfachheit ist immer $\leq$ der algebraischen Vielfachheit
+\end{remark}
+
+\begin{remark}
+Sei $V$ ein $n$-dimensionaler $\K$-VR und $T:V\to V$. Sind $\lambda_1,\dotsb,\lambda_k$ paarweise verschiedene Eigenwerte von $T$ mit algebraischern Vielfachheiten $a(T,\lambda)$, $1\leq i \leq k$, so gilt 
+\begin{align*}
+    a(T,\lambda_1)+\dotsb+a(T,\lambda_k)\leq n,
+\end{align*}
+denn deg$\chi_T=n.$
+\end{remark}
+
+\begin{theorem}
+Sei $V$ ein $n$-dimensionaler $\K$-VR und $T:V\to V$ ein Endomorphismus, und sei $\lambda\in\K$ ein Wigenwert von $T$. Es gilt
+\begin{align*}
+    g(T,\lambda)\leq a(T,\lambda).
+\end{align*}
+\end{theorem}
+
+Sei V ein $\K$-VR (nicht unbedingt endlich dimensional!) und $T:V\to V$ ein Endomorphismus und sei $\lambda\in \K$ ein Eigenwert von $T$.
+
+\begin{theorem}
+Seien $v_1,\dotsb,v_m\in V$ eigenvektoren von $T$ zu paarweise verschiedenen Eigenwerten Eigenwerte $\lambda_1,\dotsb,\lambda_m\in \K$. Dann sind $v_1,\dotsb,v_m$ l.u.
+\end{theorem}
+
+\begin{lemma}
+Sei $V$ ein $\K$-VR und $T:V\to V$ ein Endomorphismus, und $\lambda_1,\dotsb,\lambda_k,\ k\geq2$, paarweise verschiedene Eigenwerte von $T$. Es gilt
+\begin{align*}
+    \sum_{i=1}^k\text{Eig}(T,\lambda_i)=\bigoplus_{i=1}^k\text{Eig}(T,\lambda_i)
+\end{align*}
+\end{lemma}
+
+\begin{lemma}
+Sei $V$ ein $\K$-VR und $T:V\to V$ ein Endomorphismus, und $\lambda_1,\dotsb,\lambda_k,\ k\geq2$, paarweise verschiedene Eigenwerte von $T$. Es gilt
+\begin{align*}
+    \text{Eig}(T,\lambda_i)\cap\text{Eig}(T,\lambda_j)=\{0_v\}
+\end{align*}
+für alle $1\leq i \neq j \leq k$.
+\end{lemma}
+
+\begin{definition}
+Direkte Summe beliebig vieler Unterräume.\\
+Sei $V$ ein $\K$-VR und seien $W_i \leq V,\ 1\leq i\leq k$, Unterräume von $V$. Die folgenden Aussagen sind äquivalent:
+\begin{enumerate}
+    \item \begin{align*}
+        W=W_1+\dotsb+W_k, \text{   und für jedes } 1\leq i \leq k\\
+        \left(\sum_{j\neq i}^kW_j\right)\cap W_i =\{0_V\}\quad 1\leq i\leq k,
+    \end{align*}
+    \item Jedes $v\in W= \sum_{i\in I}W_i$ hat eine eindeutige Darstellung als Summe von Vektoren $w_i\in W_i \ 1\leq i\leq k.$
+\end{enumerate}
+\end{definition}
+
+\begin{definition}
+(diagonalisierbarer Endomorphismus)\\
+Sei $V$ ein $n$-dimensionaler $\K$-VR. Ein Endomorphismus $T:V\to V$ heißt diagonalisierbar über $\K$, wenn es eine Basis $B$ von $V$ gibt, so dass $[T]_B^B$ diagonalisierbar ist.
+\end{definition}
+
+\begin{definition}
+(Matrixversion)\\
+Eine Matrix $A\in\mathcal{M}_n(\K)$ heißt diagonalisierbar über $\K$, wenn es eine Matrix $S\in$ GL$(n,\K)$ gibt so dass $D=S^{-1}AS$ diagonalisierbar ist.
+\end{definition}
+
+\begin{theorem}
+Sei $V$ ein $n$-dimensionaler $\K$-VR, $T:V\to V$ ein Endomorphismus und $\lambda_1,\dotsb,\lambda_k$ alle paarweise verschiedene Eigenwerte von $T$. \quad TFAE:
+\begin{enumerate}[1.]
+    \item $T$ ist diagonalisierbar
+    \item Es gibt eine Basis von $V$, welche aus Eigenvektoren besteht
+    \item $V=\bigoplus_{i=1}^k$Eig$(T,\lambda_i)$
+    \item Das char. Polynom von $T, \chi_T\in\K[t]$, zerfällt in lineare Faktoren
+    \begin{align*}
+        \chi_T=\Pi_{i=1}^k(t-\lambda_i)^{a(T,\lambda_i)}\\
+        \intertext{und} a(T,\lambda_i)=g(T,\lambda_i)
+    \end{align*}
+\end{enumerate}
+\end{theorem}
+
+\begin{corollary}
+Sei $V$ ein \textcolor{red}{$n$}-dimensionaler $\K$-Vektorraum, $T:V\to V$ ein Endomorphismus und $\lambda_1,\dotsb,\lambda_\text{\textcolor{red}{$n$}}$ paarweise verschiedene Eigenwerte von $T$. Dann ist $T$ diagonalisierbar.
+D.h., es gibt eine Basis $B$ (aus Eigenvektoren von $T$) für welche 
+\begin{align*}
+    [T]_B^B= \left( \begin{matrix} \lambda_1 & 0 & \dotsb & 0 \\ 0 & \lambda_2 & \dotsb & 0 \\ \vdots & \vdots & \ddots & \vdots \\ 0 & 0 & \dotsb & \lambda_n \end{matrix} \right)
+\end{align*}
+\end{corollary}
+
+\begin{definition}
+Sei $p\in \K[t]$ ein Polynom, $p=\beta_0+\beta_1t+\dotsb+\beta_mt^m$, und sei $M\in \mathcal{M}_n(\K)$ eine Matrix. Die Matrix $p(M)$ ist definiert wie folgt:
+\begin{align*}
+    p(M) = \beta_0E_n+\beta_1M+\dotsb+\beta_nM^m\in \mathcal{M}_n(\K),
+\end{align*}
+wobei wir $M^0\coloneqq E_n$ identifiziert haben.
+\end{definition}
+
+\begin{remark}
+Sei $A=a_{i,j}\in\mathcal{M}_n(\K)$ und sei $\chi_A$ das char. Polynom von A. Sei $M\in\mathcal{M}_m(\K),\ m\in\N$ Dann ist 
+\begin{align*}
+    \chi_A(M)=\sum_{\sigma\in S_n}\Pi_{i=1}^n(\delta_{i,\sigma(i)}M-a_{i,\sigma(i)}E_m)
+\end{align*}
+\end{remark}
+
+\begin{remark}
+Warnung\\
+Die sich für $M\in\mathcal{M}_n(\K)$, aus der Definition $\chi_A=$det$(tE_n-A)$ "anbietende" Gleichung
+\begin{align*}
+    \chi_A(M)=\text{det}&(M\cdot E_n-A)=\text{det}(M-A)\\
+    &\text{IST FALSCH}
+\end{align*}
+\end{remark}
+
+\begin{theorem}
+\textcolor{red}{Cayley-Hamilton}\\
+Für jede $A\in\mathcal{M}_n(\K)$ und ihr char. Polynom $\chi_A\in\K[t]$ gilt
+\begin{align*}
+    \chi_A(A)=0\in\mathcal{M}_n(\K)
+\end{align*}
+\end{theorem}
+
+\begin{definition}
+Sei $p\in\K[t]$ ein Polynom, $p=\beta_0+\beta_1t+\dotsb+\beta_mt^m$, und sei $T:V\to V$ ein Endomorphismus $p(T)$ ist definiert wie folgt:
+\begin{align*}
+    p(T)=\beta_0\text{id}_v+\beta_1T+\dotsb+\beta_mT^m\in\text{End}(V),
+\end{align*}
+wobei wir $T^0\coloneqq$id$_V$, und $T^k=T\circ\dotsb\circ T$ (k-mal) identifiziert haben.
+\end{definition}
+
+\begin{theorem}
+\textcolor{red}{Cayley-Hamilton}\quad $"$Endomorphismus Version$"$\\
+Sei $V$ ein endlich dimensionaler Vektorraum über den Körper $\K$ und $T:V\to V$ ein Endomorphismus. Es gilt
+\begin{align*}
+    \chi_T(T)=0\in\text{End}(V).
+\end{align*}
+\end{theorem}

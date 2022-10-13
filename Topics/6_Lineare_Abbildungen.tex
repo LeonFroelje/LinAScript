@@ -1,0 +1,113 @@
+\begin{definition}
+Seien $V,\ W$ $\K$-Vektorräume und $T:V\to W$ eine Abbildung.
+Dann heißt $T$ linear (auch $\K$ linear um den Körper zu betonen)(und auch Vektorraum \textit{Homomorphismus}), wenn
+\begin{itemize}
+    \item Für alle $v_1,\ v_2\in V$ gilt $T(v_1+v_2)=T(v_1)+T(v_2)$
+    \item Für alle $\lambda\in\K$ und $v \in V$ gilt $T(\lambda\cdot v)=\lambda\cdot T(v)$
+    \item $T(\lambda_1 v_1+\lambda_2 v_2)=\lambda_1T(v_1)+\lambda_2T(v_2)$
+\end{itemize}
+\end{definition}
+
+\begin{proposition}
+Sei $\K$ ein Körper und sei $T:V \to W$ eine lineare Abbildung.
+Dann ist 
+\begin{enumerate}
+    \item $T(0_V)=0_W$
+    \item Für $v_1,\dotsb,v_m \in V$ und $\lambda_1,\dotsb,\lambda_m$ gilt
+    \begin{align*}
+        T\left(\sum_{i=1}^m\lambda_iv_i\right)=\sum_{i=1}^m\lambda_iT(v_i)
+    \end{align*}
+\end{enumerate}
+\end{proposition}
+
+\begin{lemma}
+Sei $\K$ ein Körper und seien $V,W$ und $W'$ Vektorräume über $\K$.
+\begin{enumerate}[1.]
+    \item Ist $T:V\to W$ linear, und $\alpha\in\K$, so ist 
+    \begin{align*}
+        (\alpha\cdot T):&V\to W\\
+        &v \mapsto (\alpha\cdot T)(v)\coloneqq \alpha\cdot T(v) \text{   mit } \alpha T(v)\in W
+    \end{align*}
+    auch eine lineare Abbildung
+    \item Sind $T_1,T_2:V\to W$ lineare Abbildungen, so ist 
+    \begin{align*}
+        (T_1+T_2):&V\to W\\
+        &v \mapsto (T_1+T_2)(v)\coloneqq T_1(v)+T_2(v) \text{   mit } T_1(v)+T_2(v)\in W
+    \end{align*}
+    auch eine lineare Abbildung
+    \item Sind $T_1:V\to W$ und $T_2:W\to W'$ lineare Abbildungen, so ist die Abbildung
+    \begin{align*}
+        (T_2\circ T_1):&V\to W'\\
+        &v\mapsto (T_2\circ T_1)(v)=(T_2(T_1(v)))
+    \end{align*}
+    auch linear.
+\end{enumerate}
+\end{lemma}
+
+\begin{theorem}
+Sei $V$ ein endlich dimensionaler Vektorraum über $\K$, und sei $B=(b_1,\dotsb,b_n)$ eine geordnete Basis von $V$. Seien $w_1,\dotsb,w_n\in W$ beliebige Vektoren aus $W$.\\
+Es existiert gena eine lineare Abbildung $T:V\to W$ so, dass $T(b_i)=w_i$ für $1\leq i\leq n$. Explizit ist $T$ wie folgt angegeben: ist $v\in V$, mit $v=\sum_{i=1}^n\lambda_i b_i$. Dann ist 
+\begin{align*}
+    T(v)=T\left(\sum_{i=1}^n\lambda_i b_i\right) = \sum_{i=1}^n\lambda_i w_i
+\end{align*}
+\end{theorem}
+
+\begin{definition}\,
+\textcolor{red}{Kern und Bild}\\
+Seien $V,W$ Vektorräume über den Körper $\K$ und $T:V\to W$ eine lineare Abbildung.
+\begin{enumerate}[1.]
+    \item Der \textit{Kern} von $T$ ist
+    \begin{align*}
+        \text{Kern}(T)=\{v\in V, T(v)=0_W\} \quad (=\text{Kern}T)
+    \end{align*}
+    \item Das \textit{Bild} von $T$ ist 
+    \begin{align*}
+        \text{Bild}(T)&=\{w\in W:\exists v\in V \text{ mit } T(v)=w\}\\
+        &=\{T(v):v\in V\} \quad (=\text{Bild}T)
+    \end{align*}
+\end{enumerate}
+\end{definition}
+
+\begin{theorem}
+Seien $V,W$ VR über den Körper $\K$ und $T:V\to W$ eine lineare Abbildung. Dann ist 
+\begin{enumerate}
+    \item Kern$(T)\leq V$ ein Unterraum von $V$
+    \item Bild$(T)\leq W$ ein Unterraum von $W$
+\end{enumerate}
+\end{theorem}
+
+\begin{definition}
+Seien $V,W$ VR über den Körper $\K$, $V$ endlich dimensional und $T:V\to W$ eine lineare Abbildung. Dann nennen wir Rang($T$)=$\text{dim}_\K$(Bild$T$) den Rang von $T$.
+\end{definition}
+
+\begin{remark}
+Seien $V,W$ VR über den Körper $\K$. Sei $E\subset V$ ein Erzeugendensystem von $V$ und $T:V\to W$ eine lineare Abbildung. Es gilt Bild$T=$lin$\{ T(e):e\in E\}$.
+Insbesondere, ist $E=\{v_1,\dotsb,v_m\}$, so ist 
+\begin{align*}
+    \text{Bild}T=\text{lin}\{T(v_1),\dotsb,T(v_m)\}
+\end{align*}
+\end{remark}
+
+\begin{corollary}
+Seien $V,W$ VR über den Körper $\K$. Sei $E=\{v_1,\dotsb,v_m\}\subset V$ ein Erzeugendensystem von $V$ und $T:V\to W$ eine lineare Abbildung. Es gilt 
+\begin{align*}
+    \text{Rang}T=\text{Rang}(T(v_1),\dotsb,T(v_m)).
+\end{align*}
+\end{corollary}
+
+\begin{proposition}
+\textcolor{red}{Injektivität und Surjektivität}\\
+Seien $V,W$ VR über den Körper $\K$ und sei $T:V\to W$ eine lineare Abbildung.
+\begin{enumerate}[1.]
+    \item $T$ ist genau dann \textit{injektiv}, wenn Kern$T=\{0\}$.
+    \item Seien $V,W$ endlich dimensionale Vektorräume. $T$ ist genau dann \textit{surjektiv}, wenn Rang$T=\text{dim}_\K W$.
+\end{enumerate}
+\end{proposition}
+
+\begin{theorem}
+\textcolor{red}{Dimensionssatz}\\
+Seien $V,W$ endlich dimensionale Vektorräume über den Körper $\K$ und sei $T:V\to W$ eine lineare Abbildung. Es gilt
+\begin{align*}
+    \text{dimKern}T+\text{dimBild}T=\text{dim}V
+\end{align*}
+\end{theorem}
